@@ -1,0 +1,23 @@
+{
+  "name": "keksdose",
+  "version": "1.0.0",
+  "description": "Riffle for group discussion",
+  "main": "index.html",
+  "author": "Heiko Mamerow",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^6.1.3",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-pxtorem": "^4.0.1",
+    "stylefmt": "^6.0.3"
+  },
+  "scripts": {
+    "browser-sync": "npm-scripts/browser-sync.js",
+    "postcss-style": "postcss src/pcss/style.pcss -o build/keksdose/css/style.css -w -m",
+    "postcss-raffle": "postcss src/pcss/raffle.pcss -o build/keksdose/css/raffle.css -w -m",
+    "watch": "npm run browser-sync & npm run postcss-style & npm run postcss-raffle"
+  }
+}

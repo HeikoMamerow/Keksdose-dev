@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Keksdose</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/raffle.css">
+	</head>
+
+	<body class="body">
+
+		<div class="top">
+
+			<div class="header block">
+				<div class="block-wrapper">
+					<div class="header-inner">
+						<div>
+							<img class="logo" src="img/keksdose.svg" alt="">
+						</div>
+						<div class="header-title">
+							<h1 class="h1">Keksdose</h1>
+							<p class="p">Auslosung für Gruppendiskussion</p>
+						</div>
+					</div>
+				</div><!-- .block-wrapper -->
+			</div><!-- .block -->
+
+			<div class="content block">
+				<div class="block-wrapper">
+					<div class="enter-names">
+						<p class="p textarea-label">Bitte einen Namen pro Zeile eintragen:</p>
+						<textarea class="textarea name-text-field"></textarea>
+						<button class="button" onclick="process();">Import</button>
+					</div>
+					<div id="ticket-block-wrapper" class="ticket-block-wrapper"></div>
+				</div><!-- .block-wrapper -->
+			</div><!-- .block -->
+
+		</div><!-- .top -->
+
+		<div class="footer block">
+			<div class="block-wrapper">
+				<p class="p">Logo mit freundlicher Genehmigung von https://www.flaticon.com/authors/freepik</p>
+			</div><!-- .block-wrapper -->
+		</div><!-- .block -->
+
+		<script defer src="js/jquery-1.8.0.min.js"></script>
+		<script defer src="js/jquery-ui-1.8.23.custom.min.js"></script>
+		<script defer src="js/names.js"></script>
+		<script defer src="js/raffle.js"></script>
+
+	</body>
+
+</html>
