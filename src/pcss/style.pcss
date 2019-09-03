@@ -3,13 +3,6 @@
 	font-size: 16px;
 	margin: 0;
 	background: #fff;
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}
-
-.top {
-	flex: 1 0 auto;
 }
 
 .button,
@@ -21,7 +14,17 @@
 }
 
 .h1 {
-	font-size: 200%;
+	@media only screen and (max-width: 359px) {
+		font-size: 150%;
+	}
+
+	@media only screen and (min-width: 360px) and (max-width: 450px) {
+		font-size: 200%;
+	}
+
+	@media only screen and (min-width: 451px) {
+		font-size: 300%;
+	}
 }
 
 .button,
@@ -38,7 +41,7 @@
 
 .block-wrapper {
 	max-width: 800px;
-	flex: 1 0 auto;
+	flex: 1 1 auto;
 }
 
 
@@ -86,12 +89,18 @@
 	background: #fafafa;
 }
 
-.footer {
-	margin-top: 40px;
-	color: #ddd;
-	flex-shrink: 0; 
-}
 
 .ticket-block-wrapper {
 	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.instruction {
+	margin-bottom: 40px;
+}
+
+.footer {
+	margin-top: 40px;
+	color: #ddd;
 }

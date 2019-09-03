@@ -8,16 +8,25 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "onchange": "^6.0.0",
     "postcss-cli": "^6.1.3",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
     "postcss-pxtorem": "^4.0.1",
-    "stylefmt": "^6.0.3"
+    "stylefmt": "^6.0.3",
+    "uglify-js": "^3.6.0"
   },
   "scripts": {
     "browser-sync": "npm-scripts/browser-sync.js",
-    "postcss-style": "postcss src/pcss/style.pcss -o build/keksdose/css/style.css -w -m",
-    "postcss-raffle": "postcss src/pcss/raffle.pcss -o build/keksdose/css/raffle.css -w -m",
-    "watch": "npm run browser-sync & npm run postcss-style & npm run postcss-raffle"
+    "html": "html-minifier --input-dir src/html --output-dir build/keksdose --collapse-whitespace --collapse-whitespace",
+    "uglify-names": "uglifyjs src/js/names.js -o build/keksdose/js/names.min.js -c --source-map",
+    "uglify-raffle": "uglifyjs src/js/raffle.js -o build/keksdose/js/raffle.min.js -c --source-map",
+    "postcss-style": "postcss src/pcss/style.pcss -o build/keksdose/css/style.min.css -w -m",
+    "postcss-raffle": "postcss src/pcss/raffle.pcss -o build/keksdose/css/raffle.min.css -w -m",
+    "onchange-html" : "onchange 'src/html/index.html' -- npm run html",
+    "onchange-js-names": "onchange 'src/js/names.js' -- npm run uglify-names",
+    "onchange-js-raffle": "onchange 'src/js/raffle.js' -- npm run uglify-raffle",
+    "watch": "npm run browser-sync & npm run postcss-style & npm run postcss-raffle & npm run onchange-html & npm run onchange-js-names & npm run onchange-js-raffle"
   }
 }
